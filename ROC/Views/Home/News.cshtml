@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ROC.Models.News>
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_NewsLayout.cshtml";
+}
+<tr>
+    <td valign="top">
+        <a name="content"></a>
+        <p class="floatRight">
+            <!--TODO: add Share--->
+        </p>
+        <h1>
+            最新消息</h1>
+        <p>
+            <table border="0" width="100%" cellspacing="20" cellpadding="0">
+                <tr>
+                    <td style="text-align: top">
+                        @foreach (var item in Model)
+                        {
+                            <strong>@item.ContentTime.ToShortDateString()</strong><br />
+                            <a href="@Url.Action("NewsDetail", "Home", new { id = item.Id })">@item.Title</a><br />
+                            <br />
+                        }
+                        <br />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+            </table>
+        </p>
+    </td>
+</tr>

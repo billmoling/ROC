@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C09EBA7-ACB4-4622-98E2-06E767E61B2B}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ROC</RootNamespace>
+    <AssemblyName>ROC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsCategoryController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\News.cs">
+      <DependentUpon>ROCModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsCategory.cs">
+      <DependentUpon>ROCModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PictureStory.cs">
+      <DependentUpon>ROCModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PictureStoryCategory.cs">
+      <DependentUpon>ROCModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectCategory.cs">
+      <DependentUpon>ROCModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectDetail.cs">
+      <DependentUpon>ROCModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Projects.cs">
+      <DependentUpon>ROCModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ROCDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ROCDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ROCModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ROCModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ROCModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ROCModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\CKeditor\adapters\jquery.js" />
+    <Content Include="Content\CKeditor\CHANGES.html" />
+    <Content Include="Content\CKeditor\ckeditor.asp" />
+    <Content Include="Content\CKeditor\ckeditor.js" />
+    <Content Include="Content\CKeditor\ckeditor_basic.js" />
+    <Content Include="Content\CKeditor\ckeditor_basic_source.js" />
+    <Content Include="Content\CKeditor\ckeditor_source.js" />
+    <Content Include="Content\CKeditor\config.js" />
+    <Content Include="Content\CKeditor\contents.css" />
+    <Content Include="Content\CKeditor\images\spacer.gif" />
+    <Content Include="Content\CKeditor\INSTALL.html" />
+    <Content Include="Content\CKeditor\lang\af.js" />
+    <Content Include="Content\CKeditor\lang\ar.js" />
+    <Content Include="Content\CKeditor\lang\bg.js" />
+    <Content Include="Content\CKeditor\lang\bn.js" />
+    <Content Include="Content\CKeditor\lang\bs.js" />
+    <Content Include="Content\CKeditor\lang\ca.js" />
+    <Content Include="Content\CKeditor\lang\cs.js" />
+    <Content Include="Content\CKeditor\lang\cy.js" />
+    <Content Include="Content\CKeditor\lang\da.js" />
+    <Content Include="Content\CKeditor\lang\de.js" />
+    <Content Include="Content\CKeditor\lang\el.js" />
+    <Content Include="Content\CKeditor\lang\en-au.js" />
+    <Content Include="Content\CKeditor\lang\en-ca.js" />
+    <Content Include="Content\CKeditor\lang\en-gb.js" />
+    <Content Include="Content\CKeditor\lang\en.js" />
+    <Content Include="Content\CKeditor\lang\eo.js" />
+    <Content Include="Content\CKeditor\lang\es.js" />
+    <Content Include="Content\CKeditor\lang\et.js" />
+    <Content Include="Content\CKeditor\lang\eu.js" />
+    <Content Include="Content\CKeditor\lang\fa.js" />
+    <Content Include="Content\CKeditor\lang\fi.js" />
+    <Content Include="Content\CKeditor\lang\fo.js" />
+    <Content Include="Content\CKeditor\lang\fr-ca.js" />
+    <Content Include="Content\CKeditor\lang\fr.js" />
+    <Content Include="Content\CKeditor\lang\gl.js" />
+    <Content Include="Content\CKeditor\lang\gu.js" />
+    <Content Include="Content\CKeditor\lang\he.js" />
+    <Content Include="Content\CKeditor\lang\hi.js" />
+    <Content Include="Content\CKeditor\lang\hr.js" />
+    <Content Include="Content\CKeditor\lang\hu.js" />
+    <Content Include="Content\CKeditor\lang\is.js" />
+    <Content Include="Content\CKeditor\lang\it.js" />
+    <Content Include="Content\CKeditor\lang\ja.js" />
+    <Content Include="Content\CKeditor\lang\km.js" />
+    <Content Include="Content\CKeditor\lang\ko.js" />
+    <Content Include="Content\CKeditor\lang\lt.js" />
+    <Content Include="Content\CKeditor\lang\lv.js" />
+    <Content Include="Content\CKeditor\lang\mn.js" />
+    <Content Include="Content\CKeditor\lang\ms.js" />
+    <Content Include="Content\CKeditor\lang\nb.js" />
+    <Content Include="Content\CKeditor\lang\nl.js" />
+    <Content Include="Content\CKeditor\lang\no.js" />
+    <Content Include="Content\CKeditor\lang\pl.js" />
+    <Content Include="Content\CKeditor\lang\pt-br.js" />
+    <Content Include="Content\CKeditor\lang\pt.js" />
+    <Content Include="Content\CKeditor\lang\ro.js" />
+    <Content Include="Content\CKeditor\lang\ru.js" />
+    <Content Include="Content\CKeditor\lang\sk.js" />
+    <Content Include="Content\CKeditor\lang\sl.js" />
+    <Content Include="Content\CKeditor\lang\sr-latn.js" />
+    <Content Include="Content\CKeditor\lang\sr.js" />
+    <Content Include="Content\CKeditor\lang\sv.js" />
+    <Content Include="Content\CKeditor\lang\th.js" />
+    <Content Include="Content\CKeditor\lang\tr.js" />
+    <Content Include="Content\CKeditor\lang\uk.js" />
+    <Content Include="Content\CKeditor\lang\vi.js" />
+    <Content Include="Content\CKeditor\lang\zh-cn.js" />
+    <Content Include="Content\CKeditor\lang\zh.js" />
+    <Content Include="Content\CKeditor\lang\_languages.js" />
+    <Content Include="Content\CKeditor\lang\_translationstatus.txt" />
+    <Content Include="Content\CKeditor\LICENSE.html" />
+    <Content Include="Content\CKeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Content\CKeditor\plugins\a11yhelp\lang\en.js" />
+    <Content Include="Content\CKeditor\plugins\a11yhelp\lang\he.js" />
+    <Content Include="Content\CKeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Content\CKeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Content\CKeditor\plugins\adobeair\plugin.js" />
+    <Content Include="Content\CKeditor\plugins\ajax\plugin.js" />
+    <Content Include="Content\CKeditor\plugins\autogrow\plugin.js" />
+    <Content Include="Content\CKeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Content\CKeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Content\CKeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Content\CKeditor\plugins\div\dialogs\div.js" />
+    <Content Include="Content\CKeditor\plugins\find\dialogs\find.js" />
+    <Content Include="Content\CKeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Content\CKeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Content\CKeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Content\CKeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Content\CKeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Content\CKeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Content\CKeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Content\CKeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Content\CKeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Content\CKeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Content\CKeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Content\CKeditor\plugins\iframedialog\plugin.js" />
+    <Content Include="Content\CKeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="Content\CKeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="Content\CKeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Content\CKeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Content\CKeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Content\CKeditor\plugins\link\images\anchor.gif" />
+    <Content Include="Content\CKeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Content\CKeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Content\CKeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Content\CKeditor\plugins\pastetext\dialogs\pastetext.js" />
+    <Content Include="Content\CKeditor\plugins\placeholder\dialogs\placeholder.js" />
+    <Content Include="Content\CKeditor\plugins\placeholder\lang\en.js" />
+    <Content Include="Content\CKeditor\plugins\placeholder\lang\he.js" />
+    <Content Include="Content\CKeditor\plugins\placeholder\placeholder.gif" />
+    <Content Include="Content\CKeditor\plugins\placeholder\plugin.js" />
+    <Content Include="Content\CKeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Content\CKeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Content\CKeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Content\CKeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Content\CKeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Content\CKeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Content\CKeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Content\CKeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Content\CKeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Content\CKeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Content\CKeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Content\CKeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Content\CKeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Content\CKeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Content\CKeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Content\CKeditor\plugins\specialchar\lang\en.js" />
+    <Content Include="Content\CKeditor\plugins\styles\styles\default.js" />
+    <Content Include="Content\CKeditor\plugins\tableresize\plugin.js" />
+    <Content Include="Content\CKeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Content\CKeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Content\CKeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Content\CKeditor\plugins\templates\templates\default.js" />
+    <Content Include="Content\CKeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Content\CKeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Content\CKeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Content\CKeditor\plugins\uicolor\dialogs\uicolor.js" />
+    <Content Include="Content\CKeditor\plugins\uicolor\lang\en.js" />
+    <Content Include="Content\CKeditor\plugins\uicolor\lang\he.js" />
+    <Content Include="Content\CKeditor\plugins\uicolor\plugin.js" />
+    <Content Include="Content\CKeditor\plugins\uicolor\uicolor.gif" />
+    <Content Include="Content\CKeditor\plugins\uicolor\yui\assets\hue_bg.png" />
+    <Content Include="Content\CKeditor\plugins\uicolor\yui\assets\hue_thumb.png" />
+    <Content Include="Content\CKeditor\plugins\uicolor\yui\assets\picker_mask.png" />
+    <Content Include="Content\CKeditor\plugins\uicolor\yui\assets\picker_thumb.png" />
+    <Content Include="Content\CKeditor\plugins\uicolor\yui\assets\yui.css" />
+    <Content Include="Content\CKeditor\plugins\uicolor\yui\yui.js" />
+    <Content Include="Content\CKeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Content\CKeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Content\CKeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Content\CKeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Content\CKeditor\plugins\xml\plugin.js" />
+    <Content Include="Content\CKeditor\skins\kama\dialog.css" />
+    <Content Include="Content\CKeditor\skins\kama\editor.css" />
+    <Content Include="Content\CKeditor\skins\kama\icons.png" />
+    <Content Include="Content\CKeditor\skins\kama\icons_rtl.png" />
+    <Content Include="Content\CKeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="Content\CKeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="Content\CKeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="Content\CKeditor\skins\kama\images\mini.gif" />
+    <Content Include="Content\CKeditor\skins\kama\images\noimage.png" />
+    <Content Include="Content\CKeditor\skins\kama\images\sprites.png" />
+    <Content Include="Content\CKeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="Content\CKeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="Content\CKeditor\skins\kama\skin.js" />
+    <Content Include="Content\CKeditor\skins\kama\templates.css" />
+    <Content Include="Content\CKeditor\skins\office2003\dialog.css" />
+    <Content Include="Content\CKeditor\skins\office2003\editor.css" />
+    <Content Include="Content\CKeditor\skins\office2003\icons.png" />
+    <Content Include="Content\CKeditor\skins\office2003\icons_rtl.png" />
+    <Content Include="Content\CKeditor\skins\office2003\images\dialog_sides.gif" />
+    <Content Include="Content\CKeditor\skins\office2003\images\dialog_sides.png" />
+    <Content Include="Content\CKeditor\skins\office2003\images\dialog_sides_rtl.png" />
+    <Content Include="Content\CKeditor\skins\office2003\images\mini.gif" />
+    <Content Include="Content\CKeditor\skins\office2003\images\noimage.png" />
+    <Content Include="Content\CKeditor\skins\office2003\images\sprites.png" />
+    <Content Include="Content\CKeditor\skins\office2003\images\sprites_ie6.png" />
+    <Content Include="Content\CKeditor\skins\office2003\skin.js" />
+    <Content Include="Content\CKeditor\skins\office2003\templates.css" />
+    <Content Include="Content\CKeditor\skins\v2\dialog.css" />
+    <Content Include="Content\CKeditor\skins\v2\editor.css" />
+    <Content Include="Content\CKeditor\skins\v2\icons.png" />
+    <Content Include="Content\CKeditor\skins\v2\icons_rtl.png" />
+    <Content Include="Content\CKeditor\skins\v2\images\dialog_sides.gif" />
+    <Content Include="Content\CKeditor\skins\v2\images\dialog_sides.png" />
+    <Content Include="Content\CKeditor\skins\v2\images\dialog_sides_rtl.png" />
+    <Content Include="Content\CKeditor\skins\v2\images\mini.gif" />
+    <Content Include="Content\CKeditor\skins\v2\images\noimage.png" />
+    <Content Include="Content\CKeditor\skins\v2\images\sprites.png" />
+    <Content Include="Content\CKeditor\skins\v2\images\sprites_ie6.png" />
+    <Content Include="Content\CKeditor\skins\v2\images\toolbar_start.gif" />
+    <Content Include="Content\CKeditor\skins\v2\skin.js" />
+    <Content Include="Content\CKeditor\skins\v2\templates.css" />
+    <Content Include="Content\CKeditor\themes\default\theme.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\ROCDB.edmx.sql" />
+    <Content Include="Scripts\EditorHookup.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\ROCDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ROCDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\CKeditor\.htaccess" />
+    <None Include="Content\CKeditor\ckeditor.pack" />
+    <None Include="Content\CKeditor\ckeditor.php" />
+    <None Include="Content\CKeditor\ckeditor_php4.php" />
+    <None Include="Content\CKeditor\ckeditor_php5.php" />
+    <None Include="Models\ROCModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ROCModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\ROCModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ROCModel.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\News\Details.cshtml" />
+    <Content Include="Views\News\Delete.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\News\Create.cshtml" />
+    <Content Include="Views\NewsCategory\Index.cshtml" />
+    <Content Include="Views\NewsCategory\Create.cshtml" />
+    <Content Include="Views\NewsCategory\Details.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\PicStory.cshtml" />
+    <Content Include="Views\NewsCategory\_ShowList.cshtml" />
+    <Content Include="Views\Home\NewsDetail.cshtml" />
+    <Content Include="Views\Shared\_NewsLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>13823</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

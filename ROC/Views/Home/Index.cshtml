@@ -1,0 +1,49 @@
+﻿@model IList<ROC.Models.News>
+           
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="homepage">
+    <div id="content">
+      <div id="topRow">
+	  
+        <div id="news">
+          
+		  
+          <h2>News</h2>
+          <ul class="headlines">
+          @foreach (var item in Model)
+          {
+            <li><strong>@item.ContentTime.ToShortDateString()</strong> <a href="@Url.Action("NewsDetail", "Home", new { id = item.Id })">@item.Title</a></li>
+          }
+          </ul>
+        </div>
+		
+		
+		
+        <div class="flash">
+          <!--Add jquery pic change -->
+        </div>
+		
+		
+		
+		
+		
+        <div class="clear">&nbsp;</div>
+		
+      </div>
+      <div id="bottomRow">
+        <a href="#">
+		<img class="floatRight rightCallout" src="" alt="" title="" /></a>
+		
+		<a href="#">
+		<img class="floatRight middleCallout" src="" alt="" title="" /></a>
+		
+		<a href="#">
+		<img class="floatRight leftCallout" src="" alt="" title="" /></a>
+
+      
+      </div>
+    </div>
+</div>

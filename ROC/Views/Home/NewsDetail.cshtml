@@ -1,0 +1,49 @@
+﻿@model ROC.Models.News
+
+@{
+    ViewBag.Title = "NewsDetail";
+    Layout = "~/Views/Shared/_NewsLayout.cshtml";
+}
+
+ <tr>
+
+        <td colspan="2" align="right">
+
+            <!-- JiaThis Button BEGIN -->
+                <div id="ckepop">
+	                <a href="http://www.jiathis.com/share/" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">分享</a>
+	                <span class="jiathis_separator">|</span>
+	                <a class="jiathis_button_qzone"></a>
+	                <a class="jiathis_button_tsina"></a>
+	                <a class="jiathis_button_icons_1"></a>
+	                <a class="jiathis_button_icons_2"></a>
+                </div>
+                <script type="text/javascript" src="http://v1.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+
+        </td>
+
+</tr>
+
+ <tr> 
+        <td valign="top"> 
+	        <div style="float: left; width:500px"> 
+                  <a name="content"></a> 
+                  <h1>@Model.Title</h1> 
+                    <h3>来源：@Model.Source &nbsp;&nbsp;&nbsp; @Model.ContentTime.ToShortDateString()</h3>
+                   
+
+
+                  <div> @Html.Raw(Model.MainContent)</div>
+	        </div>
+        </td>
+</tr>
+            
+            
+          
+
+
+
+
+
+

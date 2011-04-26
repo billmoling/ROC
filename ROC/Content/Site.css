@@ -1,0 +1,1181 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body
+{
+     font-size       : 0.81em;
+    text-decoration : none;
+    background-color: #5c87b2;
+    font-size: 75%;
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+a:link
+{
+    color: #034af3;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #505abc;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #12eb87;
+}
+
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #000;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2
+{
+    padding: 0 0 10px 0;
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header
+{
+    position: relative;
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0;
+}
+
+#header h1
+{
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-size: 32px !important;
+}
+
+#main
+{
+    padding: 30px 30px 15px 30px;
+    background-color: #fff;
+    margin-bottom: 30px;
+    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+}
+
+#footer
+{
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0;
+    font-size: .9em;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu
+{
+    border-bottom: 1px #5C87B2 solid;
+    padding: 0 0 2px;
+    position: relative;
+    margin: 0;
+    text-align: right;
+}
+
+ul#menu li
+{
+    display: inline;
+    list-style: none;
+}
+
+ul#menu li#greeting
+{
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    color: #fff;
+}
+
+ul#menu li a
+{
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    background-color: #e8eef4;
+    color: #034af3;
+}
+
+ul#menu li a:hover
+{
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul#menu li a:active
+{
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+
+ul#menu li.selected a
+{
+    background-color: #fff;
+    color: #000;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset 
+{
+    border:1px solid #ddd;
+    padding:0 1.4em 1.4em 1.4em;
+    margin:0 0 1.5em 0;
+}
+
+legend 
+{
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+textarea 
+{
+    min-height: 75px;
+}
+
+input[type="text"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input[type="password"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+}
+
+table td 
+{
+  padding: 5px;   
+  /* border: solid 1px #e8eef4;*/
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  background-color: #e8eef4; 
+  border: solid 1px #e8eef4;   
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color:Red;
+}
+
+#menucontainer
+{
+    margin-top:40px;
+}
+
+div#title
+{
+    display:block;
+    float:left;
+    text-align:left;
+}
+
+#logindisplay
+{
+    font-size:1.1em;
+    display:block;
+    text-align:right;
+    margin:10px;
+    color:White;
+}
+
+#logindisplay a:link
+{
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:visited
+{
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:hover
+{
+    color: white;
+    text-decoration: none;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label,
+.editor-label
+{
+    margin: 1em 0 0 0;
+}
+
+.display-field,
+.editor-field
+{
+    margin:0.5em 0 0 0;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+
+
+/* User Added
+-------------------------------------------*/
+.adminRichText
+{
+    width:450px;
+    height:300px;
+}
+
+
+
+
+body.homepage {
+  background-color: #eee;
+}
+
+ul, li, ul, pre, textarea {
+  font-size      : 1.0em;
+  text-decoration: none;
+  font-family    : Verdana,Arial,Geneva,Helvetica,sans-serif;
+  color          : #000;
+}
+
+td {
+  font-size: 0.81em;
+}
+
+H1 {
+  font-size      : 3em;
+  font-weight    : bold;
+  font-family    : Times New Roman, serif;
+  text-decoration: none;  
+  color          : #49708F;
+}
+
+h2 {
+  font-size: 1.0125em;
+}
+
+.normal {
+  font-size: 0.81em;
+}
+
+.plus1 {
+  font-size: 1.3em;
+}
+
+.minus1 {
+  font-size  : 0.7em;
+  font-family: Verdana,Arial,Geneva,Helvetica,sans-serif;
+}
+
+.hidden {
+  display:none;
+}
+
+a.header,
+span.header {
+  font-size      : 10px;
+  font-family    : Verdana,Arial,Geneva, Helvetica, sans-serif;
+  text-decoration: none;
+  color          : #fff;
+}
+
+.subnav1 {
+  font-size      : 0.75em;
+  font-family    : Verdana,Arial,Geneva, Helvetica, sans-serif;
+  text-decoration: none;
+  color          : #fff;
+}
+
+.copy {
+  font-size  : 0.7em;
+  font-family: Verdana,Arial,Geneva,Helvetica,sans-serif;
+  color      : #000;
+}
+
+a.body:link {
+  color          : #000; 
+  text-decoration: underline;
+}
+
+a.body:visited {
+  color          : #000;
+  text-decoration: underline;
+}
+
+a.body:hover {
+  color          : #000;
+  text-decoration: underline;
+}
+
+a.header {
+  color          : #fff; 
+  text-decoration: underline;
+  font-weight    : bold;
+}
+
+a.header:hover{
+  color          :#000; 
+  text-decoration: none;
+  font-weight    : bold;
+}
+
+.monospace {
+  font-size  : 0.88em; 
+  font-family: monospace, courier, verdana, sans-serif;
+}
+
+.alignLeft {
+  float: left;
+}
+
+.alignRight {
+  float: right;
+}
+
+/* ###################### added all styles that follow ########################## */
+
+a.copy:link {
+  color: #000;
+}
+
+.alignBottom {
+  vertical-align: bottom;
+}
+
+.crumb {
+  font-size      : 0.7em;
+  text-decoration: none;
+}
+
+.floatRight {
+  float: right;
+}
+
+.subMenu{
+  padding: 0px 2px 6px 2px;
+}
+
+.subnav {
+  font-family    : Verdana,Arial,Geneva,Helvetica,sans-serif;
+  text-decoration: none;
+  color          : #fff;
+}
+
+.subnav_home {
+  font-family    : Verdana,Arial,Geneva, Helvetica, sans-serif;
+  text-decoration: none;
+  color          : #000;
+}
+
+.subnav_header {
+  font-family    : Verdana,Arial,Geneva, Helvetica, sans-serif;
+  text-decoration: none;
+  color          : #fff;
+}
+
+/* BEGIN used for noscript version of site */
+.topNoScript {
+  text-decoration: none;
+  color          : #fff;
+  font-size      : 0.75em;
+  font-family    : Verdana,Arial,Geneva, Helvetica, sans-serif;
+  padding        : 4px 2px;
+  font-weight    : bold;
+}
+
+.sideNoScript {
+  text-decoration: none;
+  color          : #fff;
+  font-size      : 0.75em;
+  font-family    : Verdana,Arial,Geneva, Helvetica, sans-serif;
+  padding        : 4px 6px;
+}
+/* END used for noscript version of site */
+
+.margin3px {
+  margin: 3px;
+}
+
+.margin5px {
+  margin: 5px;
+}
+
+div.share {
+  margin: 5px 10px;
+}
+
+
+
+/****************************************************************************
+ =Homepage Styles
+ ****************************************************************************/
+div#homepage {
+  text-align: center;
+  margin    : 0px;
+  padding   : 0px;
+}
+ 
+div#homepage div#content {
+  margin          : 0px auto;
+  padding         : 0px;
+  width           : 900px;	
+  min-width       : 900px;	
+  background-color: #fff;
+  text-align      : left;
+}
+
+div#homepage div#content a img {
+  border: 0px;
+}
+
+div#homepage div#topRow {
+  padding-top: 25px;
+}
+
+div#homepage div#topRow div.flash {
+  border      : 1px solid #868686;
+  padding     : 6px 5px;
+  margin-right: 306px;
+  margin-left : 24px;
+  width       : 550px;
+}
+
+div#homepage div#topRow > div.flash {
+  padding: 6px 2px;
+}
+
+div#homepage div#bottomRow {
+  height             : 175px;
+  padding-top        : 25px;
+}
+
+div#homepage div#bottomRow div.text {
+  width           : 240px;
+  height          : 125px;
+  overflow-y      : auto;
+  float           : right;
+  background-color: #fff;
+}
+
+div#homepage div#bottomRow a img,
+div#homepage div#bottomRow div {
+  padding: 5px;
+  border : 1px solid #6b86a4;
+}
+    
+div#homepage div#bottomRow div.text h2 {
+  color: #6b86a4;
+}
+
+div#homepage div#bottomRow div.text p {  
+  font-size: 0.75em;
+}
+
+div#homepage div#bottomRow > div.text p {
+  font-size: 0.85em;
+}
+
+div#homepage div#bottomRow div.rightCallout {
+  margin-top  : 11px;
+  margin-right: 11px;
+  padding     : 5px;
+}
+
+div#homepage div#bottomRow img.rightCallout {
+  margin-top  : 11px;
+  margin-right: 22px;
+  padding     : 5px;
+}
+
+div#homepage div#bottomRow > div.rightCallout,
+div#homepage div#bottomRow a > img.rightCallout {
+  margin-top  : 11px;
+  margin-right: 25px;
+}
+
+div#homepage div#bottomRow div.middleCallout,
+div#homepage div#bottomRow img.middleCallout {
+  margin-top  : 11px;
+  margin-right: 46px;
+}
+
+div#homepage div#bottomRow > div.middleCallout,
+div#homepage div#bottomRow a > img.middleCallout {
+  margin-top  : 11px;
+  margin-right: 46px;
+}
+
+div#homepage div#bottomRow div.leftCallout,
+div#homepage div#bottomRow img.leftCallout {
+  margin-top  : 11px;
+  margin-right: 48px;
+}
+
+div#homepage div#bottomRow > div.leftCallout,
+div#homepage div#bottomRow > img.leftCallout {
+  margin-right: 48px;
+}
+
+div#homepage div#bottomRow img {
+  width : 240px;
+  height: 125px;
+}
+
+div#news {  
+  width           : 236px;
+  float           : right;        	
+  margin-right    : 11px;
+  padding         : 6px 7px;
+  border          : 1px solid #868686;
+}
+
+div#homepage div#topRow > div#news {
+  margin-right: 25px;
+  width       : 236px;
+}
+
+div#news h2 {
+  background-color : #6b86a4;
+  color            : #fff;
+  font-size        : 1.2em;
+  line-height      : 2.0em;
+  padding-left     : 8px;
+  margin           : 0px;
+}
+
+div#news img.rss {
+  margin: 0.55em 0.6em 0em 0em;
+  float: right;
+}
+
+div#news ul.headlines {
+  background-color: #b3bdc9;
+  list-style: none;
+  margin    : 0px;
+  padding   : 0px;
+  height    : 244px;
+  width     : 100%;
+  overflow-y: auto;
+}
+    
+div#news ul.headlines li {
+  font-size  : 0.85em;
+  line-height: 1.3em;
+  margin     : 10px 10px;
+}
+    
+div#news ul.headlines a {
+  color: #333;
+}
+
+div.clear {
+  clear      : both;
+  line-height: 1px;
+}
+
+
+/****************************************************************************
+ =Footer Styles
+ ****************************************************************************/
+table#footer {
+  font-size : 1.0em;
+  border-top: 1px solid #898989;
+  color     : #898989;
+  margin    : 0px;
+  padding   : 10px;
+  width     : 100%;
+}
+
+table#footer span.subnav1, table#footer a {
+  font-size: 1.0em;
+  color    : #898989;
+}
+
+
+/****************************************************************************
+ =Two-column layout Styles
+ ****************************************************************************/
+div.two-column div.left-column {
+  margin-right: 325px;
+}
+
+div.two-column div.right-column {
+  width: 300px;
+  float: right;
+}
+
+
+/****************************************************************************
+ =ProductFact Styles
+ ****************************************************************************/
+div.productFact {
+  margin-left     : 1%;
+}
+
+div.productFact h3{  
+  font-size : 1.0em;
+  margin    : 15px 0px 5px 0px;
+  padding   : 0px;
+  clear     : both;
+  text-align: center;
+}
+
+div.productFact div.right-column {
+  padding         : 8px 0px;
+  background-color: #eee;
+}
+
+div.productFact > div.right-column {
+  padding: 0px;
+}
+
+div.productFact div.right-column div.primary-image {
+  margin    : 15px 8px;
+  padding   : auto;
+  text-align: center;
+}
+
+div.productFact div.right-column div.primary-image img {
+  border: 1px solid #49708f;
+}  
+
+div.productFact div.right-column a img {
+  border : 1px solid #49708f;
+  padding: 1px;
+}
+
+div.productFact div.right-column a > img {
+  margin-top: 8px;
+}
+
+div.productFact p.companyAddress {
+  text-align:center;
+}
+
+div.productFact p.companyAddress a {
+  font-weight: bold;
+}
+
+div.productFact div.right-column div.image-gallery {
+  text-align: center;  
+}
+
+div.productFact div.right-column div.image-gallery ul {
+  list-style: none;
+  padding   : auto;
+  margin    : 0px;
+}
+
+div.productFact div.right-column div.image-gallery ul li {
+  line-height   : 1.8em;
+  padding       : 0px;
+  vertical-align: top;
+}
+
+div.productFact div.right-column div.image-gallery ul li {
+  margin   : 2px;
+  font-size: 0.8em;
+  display  : inline;
+  width    : 30%;
+}
+
+div.productFact div.right-column div.image-gallery ul > li {
+  width    : auto;
+  max-width: 40%;
+  margin   : 0px 5px;
+  display  : block;
+  float    : left;  
+}
+
+div.productFact div.right-column div.video-gallery table,
+div.productFact div.right-column div.download-list table {
+  border: 0px;
+}
+
+div.productFact div.right-column div.video-gallery table td,
+div.productFact div.right-column div.download-list table td {
+  padding       : 5px;
+  vertical-align: middle;
+}
+
+
+
+/****************************************************************************
+ =companyHome Styles
+ ****************************************************************************/
+div.companyHome {
+  width:680px;
+}
+
+div.companyHome a img {
+  border: 0px;
+}
+
+div.companyHome div.calloutNews {
+  vertical-align: middle;
+  width         : 675px;
+  height        : 220px;
+  margin        : 15px 0px;
+  clear         : both;
+}
+
+div.companyHome div#news {
+  float : right;
+  margin: 11px 22px 0px 0px;
+  width : 275px;
+}
+
+div.companyHome div#news ul {
+  height: 142px;
+}
+
+div.companyHome div.calloutNews .callout {
+  margin : 11px 22px 0 22px;
+  padding: 5px;
+  border : 1px solid #6b86a4;
+  float  : left;
+  clear  : left;
+  width  : 275px;
+  height : 175px;
+}
+
+div.companyHome div.calloutNews .text {
+  overflow-y      : auto;
+  float           : left;
+  background-color: #fff;
+}
+
+/****************************************************************************
+ =Header Styles
+ ****************************************************************************/
+ .follow
+ {
+ 	vertical-align: middle;
+ 	font-weight: bold;
+ 	color:#FFFFFF;
+ 	font-size:10px;
+ 	padding-right:0px;
+}
+
+
+
+/****************************************************************************
+ =DIV Styles
+ ****************************************************************************/
+
+div#primaryNav {
+  font-family     : Verdana,Arial,Geneva,Helvetica,sans-serif;
+  font-size       : 11px;
+  background-color: #898989;
+  line-height     : 2em;
+  width           : 100%;
+  margin          : 0px;
+  padding         : 0px;
+  border          : 0px;
+}
+
+div#primaryNav div.rightSide {
+  float: right;
+}
+
+div#sideNav {
+  font-family     : Verdana,Arial,Geneva,Helvetica,sans-serif;
+  font-size       : 11px;
+  background-color: #6b86a4;
+  border-bottom   : 1px solid #000;
+  margin          : 0px;
+  padding         : 0px;
+  line-height     : 1.636em;  
+}
+
+/****************************************************************************
+ =UL and =LI Styles
+ ****************************************************************************/
+
+div#primaryNav ul {
+  padding    : 0px;
+  border     : 0px;
+  margin     : 0px;
+  list-style : none;
+  z-index    : 2;
+}
+
+div#primaryNav li {
+  float       : left;
+  position    : relative;
+  padding     : 0px 0.6363em;
+  border-right: 1px dotted #fff;  
+  z-index     : 2;
+}
+
+div#primaryNav li ul {
+  display : none;
+  position: absolute;
+  left    : 0px;
+}
+
+div#primaryNav li:hover ul,
+div#primaryNav li.Over ul {
+  display : block;
+  position: absolute;
+  top     : 2em;
+  left    : 0px;
+  width   : 15.4545em;
+  z-index : 2;
+}
+
+div#primaryNav li.dropdownLeft:hover ul,
+div#primaryNav li.dropdownLeftOver ul {
+  display : block;
+  position: absolute;
+  left    : auto;
+  right   : 0px;
+  top     : 2em;
+  width   : auto;
+  z-index : 2;
+}
+
+div#primaryNav li:hover ul li,
+div#primaryNav li:hover ul li.flyoutLeft, 
+div#primaryNav li:hover ul li.flyoutRight,
+div#primaryNav li.Over ul li,
+div#primaryNav li.Over ul li.flyoutLeft,
+div#primaryNav li.Over ul li.flyoutRight {
+  background-color: #e6e6e6;
+  width           : 15.4545em;
+  border-bottom   : 1px solid #b3bdc9;
+  line-height     : 1.636em;  
+  z-index         : 2;
+}
+
+div#primaryNav li.dropdownLeft:hover ul li,
+div#primaryNav li.dropdownLeft:hover ul li.flyoutLeft,
+div#primaryNav li.dropdownLeftOver ul li,
+div#primaryNav li.dropdownLeftOver ul li.flyoutLeft {
+  background-color: #e6e6e6;
+  width           : 15.4545em;
+  border-bottom   : 1px solid #b3bdc9;
+  line-height     : 1.636em;  
+  padding         : 0px 0px 0px 1.2727em;
+  z-index         : 2;
+}
+
+div#primaryNav li:hover ul li:hover,
+div#primaryNav li:hover ul li.flyoutLeft:hover,
+div#primaryNav li:hover ul li.flyoutRight:hover,
+div#primaryNav li.Over ul li.Over,
+div#primaryNav li.Over ul li.flyoutLeftOver,
+div#primaryNav li.Over ul li.flyoutRightOver,
+div#primaryNav li.dropdownLeftOver ul li.Over,
+div#primaryNav li.dropdownLeftOver ul li.flyoutLeftOver,
+div#primaryNav li.dropdownLeftOver ul li.flyoutRightOver {
+  background-color: #b3bdc9;
+  border-bottom   : 1px solid #e6e6e6;  
+  z-index         : 2;
+}
+
+div#primaryNav li:hover ul li ul,
+div#primaryNav li:hover ul li.flyoutLeft ul,
+div#primaryNav li:hover ul li.flyoutRight ul,
+div#primaryNav li.Over ul li ul,
+div#primaryNav li.Over ul li.flyoutLeft ul,
+div#primaryNav li.Over ul li.flyoutRight ul,
+div#primaryNav li.dropdownLeftOver ul li ul {
+  display : none;
+  position: absolute;
+  left    : 0px;
+  width   : 15.4545em;
+}
+
+div#primaryNav li.Over ul li.Over ul,
+div#primaryNav li.Over ul li.flyoutLeftOver ul,
+div#primaryNav li.Over ul li.flyoutRightOver ul {
+  display : block;
+  position: absolute;
+  left    : 15.2727em;
+  top     : 0px;
+  width   : 15.4545em;
+  z-index : 2;
+}
+
+div#primaryNav li:hover ul li:hover ul,
+div#primaryNav li:hover ul li.flyoutLeft:hover ul,
+div#primaryNav li:hover ul li.flyoutRight:hover ul {
+  display : block;
+  position: absolute;
+  left    : 16.8181em;
+  top     : 0px;
+  width   : 15.4545em;
+  z-index : 2;
+  
+}
+
+div#primaryNav li.dropdownLeftOver ul li.flyoutLeftOver ul {
+  display : block;
+  position: absolute;
+  left    : -15.4545em;
+  top     : 0px;
+  width   : 15.4545em;
+  z-index : 2;
+}
+
+div#primaryNav li.dropdownLeft:hover ul li.flyoutLeft:hover ul {
+  display : block;
+  position: absolute;
+  left    : -16.8181em;
+  top     : 0px;
+  width   : 15.4545em;
+  z-index : 2;
+}
+
+li.flyoutLeft,
+li.flyoutLeftOver {  
+  background-image   : url('../images/arrow_left_blue.gif');
+  background-repeat  : no-repeat;
+  background-position: center left;
+}
+
+li.flyoutRight,
+li.flyoutRightOver {
+  background-image   : url('../images/arrow_right_blue.gif');
+  background-repeat  : no-repeat;
+  background-position: center right;
+}
+
+div#sideNav ul {
+  margin    : 0px;
+  padding   : 0px;
+  list-style: none;
+  z-index   : 1;
+}
+
+div#sideNav li {
+  color           : #fff;
+  line-height     : 1.636em;
+  border-bottom   : 1px solid #b3bdc9;
+  background-color: #6b86a4;  
+  margin          : 0px;
+  padding         : 0px 10px 0px 5px;
+  position        : relative;
+  width           : auto;
+  z-index         : 1;  
+}
+
+div#sideNav li.sideFlyout,
+div#sideNav li.sideFlyoutOver {
+  background-image   : url('../images/arrow_right_black.gif');
+  background-repeat  : no-repeat;
+  background-position: center right;
+}
+
+div#sideNav li ul {
+  display: none;
+}
+
+div#sideNav li:hover,
+div#sideNav li.Over,
+div#sideNav li.sideFlyoutOver {
+  color           : #000;  
+  background-color: #b3bdc9;
+  line-height     : 1.636em;
+  margin          : 0px;
+  padding         : 0px 10px 0px 5px;
+  position        : relative;
+}
+
+div#sideNav li.sideFlyoutOver ul {
+  display : block;
+  position: absolute;
+  top     : 0px;
+  left    : 153px;
+  width   : 158px;
+  z-index : 1;
+}
+
+div#sideNav li:hover ul {
+  display : block;
+  position: absolute;
+  top     : 0px;
+  left    : 158px;
+  width   : 158px;
+  z-index : 1;
+}
+
+div#sideNav li:hover ul li,
+div#sideNav li.sideFlyoutOver ul li {
+  color           : #000;
+  line-height     : 1.636em;
+  border-bottom   : 1px solid #6b86a4;
+  background-color: #e6e6e6;
+  margin          : 0px;
+  padding         : 0px 10px 0px 5px;
+  position        : relative;
+  width           : 158px;
+  z-index         : 1;
+}
+
+div#sideNav li:hover ul li:hover,
+div#sideNav li.sideFlyoutOver ul li.Over {
+  background-color: #b3bdc9;
+}
+
+/****************************************************************************
+ =A styles
+ ****************************************************************************/
+div#primaryNav a.dropDown {
+  font-weight    : bold;
+  color          : #fff;
+  text-decoration: none;
+}
+
+div#primaryNav a.dropDown:hover {
+  font-weight    : bold;
+  color          : #000;
+  text-decoration: none;
+}
+
+div#primaryNav a {
+  color          : #000;
+  text-decoration: none;
+}
+
+div#sideNav a {
+  color          : #fff;
+  text-decoration: none;
+}
+
+div#sideNav li.sideFlyout li a,
+div#sideNav li.sideFlyoutOver li a {
+  color          : #000;
+}
