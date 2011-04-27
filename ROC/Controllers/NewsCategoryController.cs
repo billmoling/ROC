@@ -7,17 +7,11 @@ using ROC.Models;
 
 namespace ROC.Controllers
 {
+    [Authorize]
     public class NewsCategoryController : Controller
     {
         ROCDBContainer db = new ROCDBContainer();
 
-        public ActionResult ShowList()
-        {
-            
-            return View();
-        }
-        
-        
         //
         // GET: /NewsCategory/
 
@@ -26,13 +20,7 @@ namespace ROC.Controllers
             return View(db.NewsCategorySet);
         }
 
-        //
-        // GET: /NewsCategory/Details/5
-
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+      
 
         //
         // GET: /NewsCategory/Create
@@ -78,7 +66,8 @@ namespace ROC.Controllers
  
         public ActionResult Edit(int id)
         {
-            return View();
+            ROC.Models.NewsCategory model = db.NewsCategorySet.Find(id);
+            return View(model);
         }
 
         //
@@ -89,7 +78,22 @@ namespace ROC.Controllers
         {
             try
             {
-                // TODO: Add update logic here
+                var modelToUpdate = db.NewsCategorySet.Find(id);
+                TryUpdateModel(modelToUpdate, collection.ToValueProvider());
+
+                try
+                {
+                    if (ModelState.IsValid)
+                    { 
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
+                catch (Exception)
+                {
+                    //Log the error (add a variable name after DataException)
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                } 
  
                 return RedirectToAction("Index");
             }
@@ -104,25 +108,26 @@ namespace ROC.Controllers
  
         public ActionResult Delete(int id)
         {
-            return View();
-        }
-
-        //
-        // POST: /NewsCategory/Delete/5
-
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
             try
             {
-                // TODO: Add delete logic here
- 
+                if (db.NewsSet.Where(m => m.CategoryID == id).Count() > 0)
+                {
+                    ModelState.AddModelError("", "Unable to delete this category.Still have some news using this category.please update these news to other category.");
+                    return RedirectToAction("Index");
+                }
+
+                var modelToDelete = db.NewsCategorySet.Find(id);
+                db.NewsCategorySet.Remove(modelToDelete);
+                db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return RedirectToAction("Index");
             }
         }
+
+       
     }
 }

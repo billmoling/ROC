@@ -52,5 +52,10 @@ namespace ROC.Controllers
         {
             return View(db.PictureStorySet);
         }
+
+        public ActionResult ShowList()
+        {
+            return View();
+        }
     }
 }
