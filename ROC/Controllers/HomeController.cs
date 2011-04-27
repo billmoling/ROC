@@ -11,6 +11,12 @@ namespace ROC.Controllers
     {
         ROCDBContainer db = new ROCDBContainer();
 
+        public ActionResult ShowList()
+        {
+            return View();
+        }
+        
+        
         public ActionResult Index()
         {
 
@@ -50,12 +56,16 @@ namespace ROC.Controllers
 
         public ActionResult PicStory()
         {
-            return View(db.PictureStorySet);
-        }
-
-        public ActionResult ShowList()
-        {
+            var model = db.PictureStorySet.FirstOrDefault();
             return View();
         }
+
+
+        public ActionResult PicStory(int id)
+        {
+            return View(db.PictureStorySet.Find(id));
+        }
+
+        
     }
 }

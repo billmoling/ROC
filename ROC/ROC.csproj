@@ -66,6 +66,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsCategoryController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PicStoryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -417,6 +418,9 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\News\Edit.cshtml" />
     <Content Include="Views\NewsCategory\Edit.cshtml" />
+    <Content Include="Views\PicStory\Index.cshtml" />
+    <Content Include="Views\PicStory\Create.cshtml" />
+    <Content Include="Views\PicStory\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

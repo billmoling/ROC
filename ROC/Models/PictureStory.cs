@@ -19,5 +19,11 @@ namespace ROC.Models
         public string Source { get; set; }
         public string DetailContent { get; set; }
         public int CategoryID { get; set; }
+
+        public IEnumerable<PictureStoryCategory> PicStoryCategoryList { get; set; }
+
+
+
+
     }
 }
