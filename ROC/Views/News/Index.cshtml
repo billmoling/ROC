@@ -1,17 +1,14 @@
-﻿@model IEnumerable<ROC.Models.News>
+﻿@model IList<ROC.Models.News>
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_BackedLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>新闻管理</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<p>
-    @Html.ActionLink("NewsCategory","Index","NewsCategory")
 </p>
 
 <table>
@@ -29,9 +26,7 @@
         <th>
             ContentTime
         </th>
-        <th>
-            MainContent
-        </th>
+       
         <th>
             CategoryID
         </th>
@@ -41,7 +36,6 @@
     <tr>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
         <td>
@@ -54,13 +48,11 @@
             @item.Source
         </td>
         <td>
-            @String.Format("{0:g}", item.ContentTime)
+            @item.ContentTime.ToShortDateString()
         </td>
+       
         <td>
-            @item.MainContent
-        </td>
-        <td>
-            @item.CategoryID
+            @item.CategorysList.Single(m=>m.Id==item.CategoryID).CategoryName
         </td>
     </tr>
 }

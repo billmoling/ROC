@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsCategoryController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -403,7 +404,6 @@
       <LastGenOutput>ROCModel.cs</LastGenOutput>
     </None>
     <Content Include="Views\News\Index.cshtml" />
-    <Content Include="Views\News\Details.cshtml" />
     <Content Include="Views\News\Delete.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\News\Create.cshtml" />
@@ -415,6 +415,9 @@
     <Content Include="Views\NewsCategory\_ShowList.cshtml" />
     <Content Include="Views\Home\NewsDetail.cshtml" />
     <Content Include="Views\Shared\_NewsLayout.cshtml" />
+    <Content Include="Views\Shared\_BackedLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\News\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

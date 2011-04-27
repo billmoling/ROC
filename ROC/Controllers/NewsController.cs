@@ -7,27 +7,30 @@ using ROC.Models;
 
 namespace ROC.Controllers
 {
+    [Authorize]
     public class NewsController : Controller
     {
         ROCDBContainer db = new ROCDBContainer();
 
         //
         // GET: /News/
-
+        
         public ActionResult Index()
         {
-            
+            List<News> list = new List<News>();
 
-            return View(db.NewsSet);
+            list=db.NewsSet.OrderByDescending(m => m.ContentTime).ToList();
+
+            foreach (var item in list)
+            {
+                item.CategorysList = db.NewsCategorySet.AsEnumerable();
+            }
+
+
+            return View(list);
         }
 
-        //
-        // GET: /News/Details/5
-
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+       
 
         //
         // GET: /News/Create
@@ -83,18 +86,40 @@ namespace ROC.Controllers
  
         public ActionResult Edit(int id)
         {
-            return View();
+            ROC.Models.News model = db.NewsSet.Find(id);
+            model.ModifiedTime=DateTime.Now;
+            model.CategorysList = db.NewsCategorySet.AsEnumerable();
+
+            return View(model);
         }
 
         //
         // POST: /News/Edit/5
 
-        [HttpPost]
+        [HttpPost,ValidateInput(false)]
         public ActionResult Edit(int id, FormCollection collection)
         {
             try
             {
-                // TODO: Add update logic here
+                var modelToUpdate = db.NewsSet.Find(id);
+                
+                TryUpdateModel(modelToUpdate, collection.ToValueProvider());
+
+                try
+                {
+                    if (ModelState.IsValid)
+                    {
+                        modelToUpdate.ModifiedTime = DateTime.Now;
+                        
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //Log the error (add a variable name after DataException)
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                } 
  
                 return RedirectToAction("Index");
             }

@@ -15,18 +15,18 @@
 
         <div id="header">
             <div id="title">
-                <h1>My MVC Application</h1>
+                <h1>Backend Management</h1>
             </div>
+
             <div id="logindisplay">
-                <a>Welcome</a>
+                @Html.Partial("_LogOnPartial")
             </div>
+
             <div id="menucontainer">
-                
+
                 <ul id="menu">
-                    <li>@Html.ActionLink("首页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("新闻","News","Home")</li>
-                    <li>@Html.ActionLink("图片故事","PicStory","Home")</li>
-                    <li>@Html.ActionLink("关于我们", "About", "Home")</li>
+                    <li>@Html.ActionLink("新闻管理", "Index", "News")</li>
+                    <li>@Html.ActionLink("新闻分类管理", "Index", "News")</li>
                 </ul>
 
             </div>
