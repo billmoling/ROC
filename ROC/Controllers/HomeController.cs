@@ -54,16 +54,20 @@ namespace ROC.Controllers
             return View(model);
         }
 
-        public ActionResult PicStory()
-        {
-            var model = db.PictureStorySet.FirstOrDefault();
-            return View();
-        }
+       
 
 
-        public ActionResult PicStory(int id)
+        public ActionResult PicStory(int? id)
         {
-            return View(db.PictureStorySet.Find(id));
+            if (id.HasValue)
+            {
+                return View(db.PictureStorySet.Find(id));
+            }
+            else
+            {
+                var model = db.PictureStorySet.FirstOrDefault();
+                return View(model);
+            }
         }
 
         

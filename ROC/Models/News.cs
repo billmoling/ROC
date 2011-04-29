@@ -11,7 +11,7 @@ namespace ROC.Models
 {
     using System;
     using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class News
     {
@@ -28,8 +28,6 @@ using System.ComponentModel.DataAnnotations;
 
         public int CategoryID { get; set; }
 
-        public IEnumerable<NewsCategory> CategorysList { get;set; }
-
-        
+        public IEnumerable<NewsCategory> CategorysList { get; set; }
     }
 }

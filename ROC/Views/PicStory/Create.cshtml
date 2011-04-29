@@ -48,7 +48,7 @@
             @Html.LabelFor(model => model.CategoryID)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CategoryID)
+             @Html.DropDownListFor(model=>model.CategoryID,new SelectList(Model.PicStoryCategoryList,"Id","CategoryName","--Select--"))
             @Html.ValidationMessageFor(model => model.CategoryID)
         </div>
 

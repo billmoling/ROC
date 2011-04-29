@@ -7,38 +7,31 @@ using ROC.Models;
 
 namespace ROC.Controllers
 {
-    public class PicStoryController : Controller
+    public class PicStoryCategoryController : Controller
     {
-        ROCDBContainer db = new ROCDBContainer();
 
+        ROCDBContainer db = new ROCDBContainer();
         //
-        // GET: /PicStory/
+        // GET: /PicStoryCategory/
 
         public ActionResult Index()
         {
-            return View(db.PictureStorySet);
+            return View(db.PictureStoryCategorySet);
         }
 
-
         //
-        // GET: /PicStory/Create
+        // GET: /PicStoryCategory/Create
 
         public ActionResult Create()
         {
-            var model = new PictureStory()
-            {
-                
-                PicStoryCategoryList= db.PictureStoryCategorySet.AsEnumerable()
-            };
-
-            return View(model);
+            return View();
         } 
 
         //
-        // POST: /PicStory/Create
+        // POST: /PicStoryCategory/Create
 
         [HttpPost]
-        public ActionResult Create(PictureStory entity)
+        public ActionResult Create(PictureStoryCategory entity)
         {
             try
             {
@@ -46,17 +39,16 @@ namespace ROC.Controllers
                 {
                     if (ModelState.IsValid)
                     {
-                        
-                        db.PictureStorySet.Add(entity);
+                        db.PictureStoryCategorySet.Add(entity);
                         db.SaveChanges();
                         return RedirectToAction("Index");
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     //Log the error (add a variable name after DataException)
                     ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
-                } 
+                }
 
                 return RedirectToAction("Index");
             }
@@ -67,37 +59,35 @@ namespace ROC.Controllers
         }
         
         //
-        // GET: /PicStory/Edit/5
+        // GET: /PicStoryCategory/Edit/5
  
         public ActionResult Edit(int id)
         {
-            ROC.Models.PictureStory model = db.PictureStorySet.Find(id);
-            model.PicStoryCategoryList = db.PictureStoryCategorySet.AsEnumerable();
-            return View();
+            ROC.Models.PictureStoryCategory model = db.PictureStoryCategorySet.Find(id);
+            return View(model);
         }
 
         //
-        // POST: /PicStory/Edit/5
+        // POST: /PicStoryCategory/Edit/5
 
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
             try
             {
-                var modelToUpdate = db.PictureStorySet.Find(id);
 
+                var modelToUpdate = db.PictureStoryCategorySet.Find(id);
                 TryUpdateModel(modelToUpdate, collection.ToValueProvider());
 
                 try
                 {
                     if (ModelState.IsValid)
                     {
-
                         db.SaveChanges();
                         return RedirectToAction("Index");
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     //Log the error (add a variable name after DataException)
                     ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
@@ -112,16 +102,29 @@ namespace ROC.Controllers
         }
 
         //
-        // GET: /PicStory/Delete/5
+        // GET: /PicStoryCategory/Delete/5
  
         public ActionResult Delete(int id)
         {
-            var modelToDelete = db.PictureStorySet.Find(id);
-            db.PictureStorySet.Remove(modelToDelete);
-            db.SaveChanges();
-            return View();
-        }
+            try
+            {
+                if (db.PictureStorySet.Where(m => m.CategoryID == id).Count() > 0)
+                {
+                    ModelState.AddModelError("", "Unable to delete this category.Still have some picstory using this category.please update these news to other category.");
+                    return RedirectToAction("Index");
+                }
 
+                var modelToDelete = db.PictureStoryCategorySet.Find(id);
+                db.PictureStoryCategorySet.Remove(modelToDelete);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return RedirectToAction("Index");
+            }
+        }
        
     }
 }

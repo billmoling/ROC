@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 04/25/2011 11:01:43
+-- Date Created: 04/29/2011 20:49:26
 -- Generated from EDMX file: E:\Develop\SourceCode\ROCMVC\ROC\ROC\Models\ROCDB.edmx
 -- --------------------------------------------------
 
@@ -22,6 +22,27 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[NewsSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[NewsSet];
+GO
+IF OBJECT_ID(N'[dbo].[NewsCategorySet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[NewsCategorySet];
+GO
+IF OBJECT_ID(N'[dbo].[ProjectCategorySet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProjectCategorySet];
+GO
+IF OBJECT_ID(N'[dbo].[ProjectsSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProjectsSet];
+GO
+IF OBJECT_ID(N'[dbo].[ProjectDetailSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProjectDetailSet];
+GO
+IF OBJECT_ID(N'[dbo].[PictureStorySet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PictureStorySet];
+GO
+IF OBJECT_ID(N'[dbo].[PictureStoryCategorySet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PictureStoryCategorySet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -82,7 +103,7 @@ GO
 -- Creating table 'PictureStoryCategorySet'
 CREATE TABLE [dbo].[PictureStoryCategorySet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [CategoryName] int  NOT NULL
+    [CategoryName] nvarchar(max)  NOT NULL
 );
 GO
 

@@ -22,8 +22,5 @@ namespace ROC.Models
 
         public IEnumerable<PictureStoryCategory> PicStoryCategoryList { get; set; }
 
-
-
-
     }
 }

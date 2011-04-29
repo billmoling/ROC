@@ -15,6 +15,6 @@ namespace ROC.Models
     public partial class PictureStoryCategory
     {
         public int Id { get; set; }
-        public int CategoryName { get; set; }
+        public string CategoryName { get; set; }
     }
 }
