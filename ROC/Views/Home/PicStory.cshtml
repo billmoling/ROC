@@ -19,7 +19,7 @@
             <table cellspacing="0" cellpadding="0" border="0" width="158">
                 <tr bgcolor="#6986A4">
                     <td valign="top" width="158">
-                        <a style="color: White; font-size: 2em">新闻类别</a>
+                        <a style="color: White; font-size: 2em"></a>
                     </td>
                 </tr>
                 <tr bgcolor="#6986A4">
@@ -78,9 +78,9 @@
                             <a name="content"></a>
                             <h1>@Model.Title</h1>
                             <h3>
-                                来源：@Model &nbsp;&nbsp;&nbsp; @Model.ContentTime.ToShortDateString()</h3>
+                                来源：@Model.Source</h3>
                             <div>
-                                @Html.Raw(Model.MainContent)</div>
+                                @Html.Raw(Model.DetailContent)</div>
                         </div>
                     </td>
                 </tr>

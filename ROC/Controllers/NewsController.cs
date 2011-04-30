@@ -55,6 +55,13 @@ namespace ROC.Controllers
         [HttpPost,ValidateInput(false)]
         public ActionResult Create(News entity)
         {
+            if (entity.CategoryID==null)
+            {
+                ModelState.AddModelError("", "Please Create Category first.if the problem persists see your system administrator.");
+                return View();
+            }
+
+
             try
             {
                 try

@@ -20,27 +20,27 @@ namespace ROC.Controllers
         
         public ActionResult Index()
         {
-            //DirectoryInfo di = new DirectoryInfo(VirtualPathUtility.ToAbsolute("/Content/IndexPic"));
-            //FileInfo[] fis = di.GetFiles();
-            //List<string> filepaths = new List<string>();
-            //for (int i = 0; i < fis.Length; i++)
-            //{
-            //    filepaths.Add(string.Format("~/Content/IndexPic/{0}",fis[i].Name));   
-            //}
-
+            DirectoryInfo di = new DirectoryInfo(Server.MapPath("~/Content/IndexPic"));
+            FileInfo[] fis = di.GetFiles("*.jpg");
             List<string> filepaths = new List<string>();
-
-            for (int i = 1; i < 10; i++)
+            for (int i = 0; i < fis.Length; i++)
             {
-                filepaths.Add(string.Format("~/Content/IndexPic/0{0}.jpg",i ));
+                filepaths.Add(string.Format("~/Content/IndexPic/{0}", fis[i].Name));
             }
+
+            //List<string> filepaths = new List<string>();
+
+            //for (int i = 1; i < 10; i++)
+            //{
+            //    filepaths.Add(string.Format("~/Content/IndexPic/0{0}.jpg",i ));
+            //}
 
 
             ViewBag.IndexPicList=filepaths;
 
 
 
-            return View(db.NewsSet.OrderByDescending(m=>m.ContentTime).Take(5).ToList());
+            return View(db.NewsSet.OrderByDescending(m=>m.ContentTime).Take(6).ToList());
         }
 
         public ActionResult About()
@@ -74,21 +74,21 @@ namespace ROC.Controllers
             return View(model);
         }
 
-
-
-        public ActionResult PicStoryCategory(int? CatgegoryId)
-        {
-            return View();
-
-
-        }
-
-
-
         public ActionResult PicStory(int? id)
         {
-            return View(db.PictureStorySet.Find(id));
-          
+            if (id.HasValue == false)
+            {
+                return View(db.PictureStorySet.FirstOrDefault());
+            }
+            else
+            {
+                return View(db.PictureStorySet.Find(id));
+            }
+        }
+
+        public ActionResult Project()
+        {
+            return View();
         }
 
         

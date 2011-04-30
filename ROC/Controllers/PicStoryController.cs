@@ -37,7 +37,7 @@ namespace ROC.Controllers
         //
         // POST: /PicStory/Create
 
-        [HttpPost]
+        [HttpPost,ValidateInput(false)]
         public ActionResult Create(PictureStory entity)
         {
             try
@@ -73,13 +73,13 @@ namespace ROC.Controllers
         {
             ROC.Models.PictureStory model = db.PictureStorySet.Find(id);
             model.PicStoryCategoryList = db.PictureStoryCategorySet.AsEnumerable();
-            return View();
+            return View(model);
         }
 
         //
         // POST: /PicStory/Edit/5
 
-        [HttpPost]
+        [HttpPost,ValidateInput(false)]
         public ActionResult Edit(int id, FormCollection collection)
         {
             try
