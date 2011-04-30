@@ -4,6 +4,11 @@
     ViewBag.Title = "Home Page";
 }
 
+@section HeadStaff{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.smallslider.js")"></script>
+    <link rel="Stylesheet" type="text/css" href="@Url.Content("~/Content/IndexPic/css/smallslider.css")" media="screen" />
+}
+
 <div id="homepage">
     <div id="content">
       <div id="topRow">
@@ -23,7 +28,14 @@
 		
 		
         <div class="flash">
-          <!--Add jquery pic change -->
+          <div id="flashbox" class="smallslider">
+              <ul>
+                @foreach (var item in ViewBag.IndexPicList)
+                {
+                     <li><a href="#"><img height="100%" width="100%" src="@Url.Content(item)" title="" alt="图片标题" /></a></li>
+                }
+              </ul>
+            </div>
         </div>
 		
 		
@@ -47,3 +59,19 @@
       </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#flashbox').smallslider({
+            onImageStop: false,
+            switchEffect: 'fadeOut',
+            switchEase: 'easeOutBounce',
+            switchPath: 'left',
+            switchMode: 'hover',
+            textSwitch: 20,
+            textPosition: 'top',
+            textAlign: 'center'
+            
+        });
+    });
+</script>

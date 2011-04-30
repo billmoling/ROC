@@ -1,13 +1,13 @@
 ﻿/*----------------------------------------------------------
-The base color for this template is #5c87b2. If you'd like
+The base color for this template is #475B74. If you'd like
 to use a different color start by replacing all instances of
-#5c87b2 with your new color.
+#475B74 with your new color.
 ----------------------------------------------------------*/
 body
 {
      font-size       : 0.81em;
     text-decoration : none;
-    background-color: #5c87b2;
+    background-color: #475B74;
     font-size: 75%;
     font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
     margin: 0;
@@ -131,7 +131,7 @@ page width. Or, you can specify an exact pixel width. */
 ----------------------------------------------------------*/
 ul#menu
 {
-    border-bottom: 1px #5C87B2 solid;
+    border-bottom: 1px #475B74 solid;
     padding: 0 0 2px;
     position: relative;
     margin: 0;
@@ -569,6 +569,7 @@ div#homepage div#topRow div.flash {
   margin-right: 306px;
   margin-left : 24px;
   width       : 550px;
+  height      : 400px;
 }
 
 div#homepage div#topRow > div.flash {
@@ -684,7 +685,7 @@ div#news ul.headlines {
   list-style: none;
   margin    : 0px;
   padding   : 0px;
-  height    : 244px;
+  height    : 350px;
   width     : 100%;
   overflow-y: auto;
 }

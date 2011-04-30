@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ROC.Models;
+using System.IO;
 
 namespace ROC.Controllers
 {
@@ -19,6 +20,25 @@ namespace ROC.Controllers
         
         public ActionResult Index()
         {
+            //DirectoryInfo di = new DirectoryInfo(VirtualPathUtility.ToAbsolute("/Content/IndexPic"));
+            //FileInfo[] fis = di.GetFiles();
+            //List<string> filepaths = new List<string>();
+            //for (int i = 0; i < fis.Length; i++)
+            //{
+            //    filepaths.Add(string.Format("~/Content/IndexPic/{0}",fis[i].Name));   
+            //}
+
+            List<string> filepaths = new List<string>();
+
+            for (int i = 1; i < 10; i++)
+            {
+                filepaths.Add(string.Format("~/Content/IndexPic/0{0}.jpg",i ));
+            }
+
+
+            ViewBag.IndexPicList=filepaths;
+
+
 
             return View(db.NewsSet.OrderByDescending(m=>m.ContentTime).Take(5).ToList());
         }
@@ -54,20 +74,21 @@ namespace ROC.Controllers
             return View(model);
         }
 
-       
+
+
+        public ActionResult PicStoryCategory(int? CatgegoryId)
+        {
+            return View();
+
+
+        }
+
 
 
         public ActionResult PicStory(int? id)
         {
-            if (id.HasValue)
-            {
-                return View(db.PictureStorySet.Find(id));
-            }
-            else
-            {
-                var model = db.PictureStorySet.FirstOrDefault();
-                return View(model);
-            }
+            return View(db.PictureStorySet.Find(id));
+          
         }
 
         

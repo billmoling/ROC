@@ -327,9 +327,20 @@
     <Content Include="Content\CKeditor\skins\v2\skin.js" />
     <Content Include="Content\CKeditor\skins\v2\templates.css" />
     <Content Include="Content\CKeditor\themes\default\theme.js" />
+    <Content Include="Content\IndexPic\01.jpg" />
+    <Content Include="Content\IndexPic\02.jpg" />
+    <Content Include="Content\IndexPic\03.jpg" />
+    <Content Include="Content\IndexPic\04.jpg" />
+    <Content Include="Content\IndexPic\05.jpg" />
+    <Content Include="Content\IndexPic\06.jpg" />
+    <Content Include="Content\IndexPic\07.jpg" />
+    <Content Include="Content\IndexPic\08.jpg" />
+    <Content Include="Content\IndexPic\09.jpg" />
+    <Content Include="Content\IndexPic\css\smallslider.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\ROCDB.edmx.sql" />
     <Content Include="Scripts\EditorHookup.js" />
+    <Content Include="Scripts\jquery.smallslider.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
