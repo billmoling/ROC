@@ -65,10 +65,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NewsCategoryController.cs" />
-    <Compile Include="Controllers\NewsController.cs" />
-    <Compile Include="Controllers\PicStoryCategoryController.cs" />
-    <Compile Include="Controllers\PicStoryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -76,22 +72,7 @@
     <Compile Include="Models\News.cs">
       <DependentUpon>ROCModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NewsCategory.cs">
-      <DependentUpon>ROCModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PictureStory.cs">
-      <DependentUpon>ROCModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PictureStoryCategory.cs">
-      <DependentUpon>ROCModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProjectCategory.cs">
-      <DependentUpon>ROCModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProjectDetail.cs">
-      <DependentUpon>ROCModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Projects.cs">
+    <Compile Include="Models\Picture.cs">
       <DependentUpon>ROCModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ROCDB.Designer.cs">
@@ -328,6 +309,43 @@
     <Content Include="Content\CKeditor\skins\v2\skin.js" />
     <Content Include="Content\CKeditor\skins\v2\templates.css" />
     <Content Include="Content\CKeditor\themes\default\theme.js" />
+    <Content Include="Content\images\gallary\gallary0.jpg" />
+    <Content Include="Content\images\gallary\gallary1.jpg" />
+    <Content Include="Content\images\gallary\gallary10.jpg" />
+    <Content Include="Content\images\gallary\gallary11.jpg" />
+    <Content Include="Content\images\gallary\gallary12.jpg" />
+    <Content Include="Content\images\gallary\gallary13.jpg" />
+    <Content Include="Content\images\gallary\gallary14.jpg" />
+    <Content Include="Content\images\gallary\gallary15.jpg" />
+    <Content Include="Content\images\gallary\gallary16.jpg" />
+    <Content Include="Content\images\gallary\gallary17.jpg" />
+    <Content Include="Content\images\gallary\gallary18.jpg" />
+    <Content Include="Content\images\gallary\gallary2.jpg" />
+    <Content Include="Content\images\gallary\gallary3.jpg" />
+    <Content Include="Content\images\gallary\gallary4.jpg" />
+    <Content Include="Content\images\gallary\gallary5.jpg" />
+    <Content Include="Content\images\gallary\gallary6.jpg" />
+    <Content Include="Content\images\gallary\gallary7.jpg" />
+    <Content Include="Content\images\gallary\gallary8.jpg" />
+    <Content Include="Content\images\gallary\gallary9.jpg" />
+    <Content Include="Content\images\head.jpg" />
+    <Content Include="Content\images\left.jpg" />
+    <Content Include="Content\images\lightbox\lightbox-blank.gif" />
+    <Content Include="Content\images\lightbox\lightbox-btn-close.gif" />
+    <Content Include="Content\images\lightbox\lightbox-btn-next.gif" />
+    <Content Include="Content\images\lightbox\lightbox-btn-prev.gif" />
+    <Content Include="Content\images\lightbox\lightbox-ico-loading.gif" />
+    <Content Include="Content\images\main.jpg" />
+    <Content Include="Content\images\narow.jpg" />
+    <Content Include="Content\images\newLeftBg.gif" />
+    <Content Include="Content\images\right.jpg" />
+    <Content Include="Content\images\sb.gif" />
+    <Content Include="Content\images\sc.gif" />
+    <Content Include="Content\images\sitemap01.jpg" />
+    <Content Include="Content\images\sitemap02.jpg" />
+    <Content Include="Content\images\sitemap03.jpg" />
+    <Content Include="Content\images\sl.gif" />
+    <Content Include="Content\images\sr.gif" />
     <Content Include="Content\IndexPic\01.jpg" />
     <Content Include="Content\IndexPic\02.jpg" />
     <Content Include="Content\IndexPic\03.jpg" />
@@ -338,9 +356,11 @@
     <Content Include="Content\IndexPic\08.jpg" />
     <Content Include="Content\IndexPic\09.jpg" />
     <Content Include="Content\IndexPic\css\smallslider.css" />
+    <Content Include="Content\jquery.lightbox-0.5.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\ROCDB.edmx.sql" />
     <Content Include="Scripts\EditorHookup.js" />
+    <Content Include="Scripts\jquery.lightbox-0.5.js" />
     <Content Include="Scripts\jquery.smallslider.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -417,27 +437,12 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ROCModel.cs</LastGenOutput>
     </None>
-    <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
-    <Content Include="Views\News\Create.cshtml" />
-    <Content Include="Views\NewsCategory\Index.cshtml" />
-    <Content Include="Views\NewsCategory\Create.cshtml" />
-    <Content Include="Views\Home\News.cshtml" />
-    <Content Include="Views\Home\PicStory.cshtml" />
-    <Content Include="Views\Home\ShowList.cshtml" />
-    <Content Include="Views\Home\NewsDetail.cshtml" />
-    <Content Include="Views\Shared\_NewsLayout.cshtml" />
     <Content Include="Views\Shared\_BackedLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\News\Edit.cshtml" />
-    <Content Include="Views\NewsCategory\Edit.cshtml" />
-    <Content Include="Views\PicStory\Index.cshtml" />
-    <Content Include="Views\PicStory\Create.cshtml" />
-    <Content Include="Views\PicStory\Edit.cshtml" />
-    <Content Include="Views\PicStoryCategory\Index.cshtml" />
-    <Content Include="Views\PicStoryCategory\Create.cshtml" />
-    <Content Include="Views\PicStoryCategory\Edit.cshtml" />
-    <Content Include="Views\Home\Project.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\historypeople.cshtml" />
+    <Content Include="Views\Home\photogallary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

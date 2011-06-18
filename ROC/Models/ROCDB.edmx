@@ -7,12 +7,7 @@
     <Schema Namespace="ROCDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="ROCDBStoreContainer">
     <EntitySet Name="NewsSet" EntityType="ROCDB.Store.NewsSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="NewsCategorySet" EntityType="ROCDB.Store.NewsCategorySet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ProjectCategorySet" EntityType="ROCDB.Store.ProjectCategorySet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ProjectsSet" EntityType="ROCDB.Store.ProjectsSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ProjectDetailSet" EntityType="ROCDB.Store.ProjectDetailSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PictureStorySet" EntityType="ROCDB.Store.PictureStorySet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PictureStoryCategorySet" EntityType="ROCDB.Store.PictureStoryCategorySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PictureSet" EntityType="ROCDB.Store.PictureSet" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="NewsSet">
     <Key>
@@ -26,52 +21,14 @@
     <Property Name="MainContent" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CategoryID" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="NewsCategorySet">
+  <EntityType Name="PictureSet">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ProjectCategorySet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ProjectsSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProjectName" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ProjectDetailSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProjectID" Type="int" Nullable="false" />
-    <Property Name="CategoryID" Type="int" Nullable="false" />
-    <Property Name="DetailContent" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PictureStorySet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Source" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DetailContent" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CategoryID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PictureStoryCategorySet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PictureName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PictureDescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PicturePath" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -79,12 +36,7 @@
       <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ROCDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="ROCDBContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="NewsSet" EntityType="ROCDB.News" />
-          <EntitySet Name="NewsCategorySet" EntityType="ROCDB.NewsCategory" />
-          <EntitySet Name="ProjectCategorySet" EntityType="ROCDB.ProjectCategory" />
-          <EntitySet Name="ProjectsSet" EntityType="ROCDB.Projects" />
-          <EntitySet Name="ProjectDetailSet" EntityType="ROCDB.ProjectDetail" />
-          <EntitySet Name="PictureStorySet" EntityType="ROCDB.PictureStory" />
-          <EntitySet Name="PictureStoryCategorySet" EntityType="ROCDB.PictureStoryCategory" />
+          <EntitySet Name="PictureSet" EntityType="ROCDB.Picture" />
         </EntityContainer>
         <EntityType Name="News">
           <Key>
@@ -98,52 +50,14 @@
           <Property Type="String" Name="MainContent" Nullable="false" />
           <Property Type="Int32" Name="CategoryID" Nullable="false" />
         </EntityType>
-        <EntityType Name="NewsCategory">
+        <EntityType Name="Picture">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="CategoryName" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ProjectCategory">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="CategoryName" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Projects">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="ProjectName" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ProjectDetail">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="ProjectID" Nullable="false" />
-          <Property Type="Int32" Name="CategoryID" Nullable="false" />
-          <Property Type="String" Name="DetailContent" Nullable="false" />
-        </EntityType>
-        <EntityType Name="PictureStory">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Title" Nullable="false" />
-          <Property Type="String" Name="Source" Nullable="false" />
-          <Property Type="String" Name="DetailContent" Nullable="false" />
-          <Property Type="Int32" Name="CategoryID" Nullable="false" />
-        </EntityType>
-        <EntityType Name="PictureStoryCategory">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="CategoryName" Nullable="false" />
+          <Property Type="String" Name="PictureName" Nullable="false" />
+          <Property Type="String" Name="PictureDescription" Nullable="true" />
+          <Property Type="String" Name="PicturePath" Nullable="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -164,56 +78,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="NewsCategorySet">
-      <EntityTypeMapping TypeName="IsTypeOf(ROCDB.NewsCategory)">
-        <MappingFragment StoreEntitySet="NewsCategorySet">
+    <EntitySetMapping Name="PictureSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ROCDB.Picture)">
+        <MappingFragment StoreEntitySet="PictureSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProjectCategorySet">
-      <EntityTypeMapping TypeName="IsTypeOf(ROCDB.ProjectCategory)">
-        <MappingFragment StoreEntitySet="ProjectCategorySet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProjectsSet">
-      <EntityTypeMapping TypeName="IsTypeOf(ROCDB.Projects)">
-        <MappingFragment StoreEntitySet="ProjectsSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProjectDetailSet">
-      <EntityTypeMapping TypeName="IsTypeOf(ROCDB.ProjectDetail)">
-        <MappingFragment StoreEntitySet="ProjectDetailSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-          <ScalarProperty Name="DetailContent" ColumnName="DetailContent" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PictureStorySet">
-      <EntityTypeMapping TypeName="IsTypeOf(ROCDB.PictureStory)">
-        <MappingFragment StoreEntitySet="PictureStorySet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Source" ColumnName="Source" />
-          <ScalarProperty Name="DetailContent" ColumnName="DetailContent" />
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PictureStoryCategorySet">
-      <EntityTypeMapping TypeName="IsTypeOf(ROCDB.PictureStoryCategory)">
-        <MappingFragment StoreEntitySet="PictureStoryCategorySet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="PictureName" ColumnName="PictureName" />
+          <ScalarProperty Name="PictureDescription" ColumnName="PictureDescription" />
+          <ScalarProperty Name="PicturePath" ColumnName="PicturePath" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -238,12 +109,7 @@
     <edmx:Diagrams>
       <Diagram Name="ROCDB" >
         <EntityTypeShape EntityType="ROCDB.News" Width="2.125" PointX="0.5" PointY="0.5" Height="2.5430916341145831" IsExpanded="true" />
-        <EntityTypeShape EntityType="ROCDB.NewsCategory" Width="1.5" PointX="2.875" PointY="0.5" Height="1.3969734700520833" />
-        <EntityTypeShape EntityType="ROCDB.ProjectCategory" Width="1.5" PointX="0.5" PointY="3.625" Height="1.3969734700520826" />
-        <EntityTypeShape EntityType="ROCDB.Projects" Width="1.5" PointX="2.25" PointY="3.625" Height="1.3969734700520826" />
-        <EntityTypeShape EntityType="ROCDB.ProjectDetail" Width="1.5" PointX="3.875" PointY="4" Height="1.7790128580729165" />
-        <EntityTypeShape EntityType="ROCDB.PictureStory" Width="1.5" PointX="4.875" PointY="0.5" Height="1.9700325520833326" />
-        <EntityTypeShape EntityType="ROCDB.PictureStoryCategory" Width="1.5" PointX="6.25" PointY="2.875" Height="1.3969734700520835" />
+        <EntityTypeShape EntityType="ROCDB.Picture" Width="2.25" PointX="3.5" PointY="0.625" Height="1.779012858072917" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

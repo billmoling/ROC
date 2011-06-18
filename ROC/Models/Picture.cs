@@ -12,14 +12,11 @@ namespace ROC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class News
+    public partial class Picture
     {
         public int Id { get; set; }
-        public System.DateTime ModifiedTime { get; set; }
-        public string Title { get; set; }
-        public string Source { get; set; }
-        public System.DateTime ContentTime { get; set; }
-        public string MainContent { get; set; }
-        public int CategoryID { get; set; }
+        public string PictureName { get; set; }
+        public string PictureDescription { get; set; }
+        public string PicturePath { get; set; }
     }
 }

@@ -26,11 +26,6 @@ namespace ROC.Models
         }
     
         public DbSet<News> NewsSet { get; set; }
-        public DbSet<NewsCategory> NewsCategorySet { get; set; }
-        public DbSet<ProjectCategory> ProjectCategorySet { get; set; }
-        public DbSet<Projects> ProjectsSet { get; set; }
-        public DbSet<ProjectDetail> ProjectDetailSet { get; set; }
-        public DbSet<PictureStory> PictureStorySet { get; set; }
-        public DbSet<PictureStoryCategory> PictureStoryCategorySet { get; set; }
+        public DbSet<Picture> PictureSet { get; set; }
     }
 }

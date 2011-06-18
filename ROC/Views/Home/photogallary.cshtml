@@ -1,0 +1,31 @@
+﻿@model IList<ROC.Models.Picture>
+
+@section HeadStaff { 
+ <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.lightbox-0.5.js")"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/jquery.lightbox-0.5.css")" media="screen" />
+
+    <script type="text/javascript">
+        $(function () {
+            $('#gallery a').lightBox();
+        });
+
+    </script>
+
+}
+
+<div id="gallery">
+
+    <ul id="ul_content" runat="server">
+
+      @foreach (var item in Model){
+          
+         <li>
+            <a href="@item.PictureName" title="@item.PictureDescription">
+                <img src="@item.PictureName" width="150" height="120" alt="\" />
+            </a>
+        </li>
+          
+      }   
+    </ul>
+
+</div>
