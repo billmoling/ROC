@@ -1,0 +1,41 @@
+﻿ @{
+     Layout = "~/Views/Shared/_Layout.cshtml";
+
+ }
+
+
+ 
+ <div class="centerBox">
+        <div class="centerSize">
+            <div class="exCenLeft" style="background: url(image/newLeftBg.gif) repeat-y #FFFFFF">
+                <div class="newLeftBox">
+                    <h3 class="aboutWeTit">
+                        关于我们</h3>
+                    <ul class="newNav">
+                        <li><a id="" href="#">活动大记事</a></li>
+                        <li><a id="teamstory" href="/Home/teamstory">团队大记事</a></li>
+                        <li><a href="cn_about_04.asp">宣传片</a></li>
+                        <li><a id="about" href="/Home/About">关于网站</a></li>
+                        <li><a href="cn_about_05.asp">网站地图</a></li>
+                        <li><a href="cn_about_06.asp">联系我们</a></li>
+                        <li><a id="copyright" href="/Home/Copyright">版权声明</a></li>
+                    </ul>
+                </div>
+                <div class="newRigBox">
+                    @RenderBody()
+                    
+                </div>
+                <div class="clearNew">
+                </div>
+            </div>
+           </div>
+           <div style="height: 20px;"></div>
+          </div>
+
+
+          <script type="text/javascript">
+              $(document).ready(function () {
+                  var pagename = $("#pagename")[0].value;
+                  $("#" + pagename).addClass("newHov");
+              });
+ </script>

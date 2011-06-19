@@ -25,10 +25,6 @@ namespace ROC.Controllers
             return View();
         }
 
-        public ActionResult historypeople()
-        {
-            return View();
-        }
 
         public ActionResult photogallary()
         {
@@ -48,5 +44,30 @@ namespace ROC.Controllers
         {
             return View();
         }
+        public ActionResult Copyright()
+        {
+            return View();
+        }
+        public ActionResult teamstory()
+        {
+            return View();
+        }
+
+        public ActionResult historypeople()
+        {
+            List<string> list = new List<string>();
+            DirectoryInfo dir = new DirectoryInfo(Server.MapPath("../Content/images/book"));
+            IEnumerable<FileInfo> fis = dir.EnumerateFiles();
+
+
+            foreach (var item in fis)
+            {
+                list.Add(string.Format("../Content/images/book/{0}", item.Name));
+            }
+            return View(list);
+        }
+
+
+        
     }
 }

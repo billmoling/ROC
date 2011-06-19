@@ -9,9 +9,13 @@ html{
 overflow-x:hidden;
 }
 /*公用部分*/
-p,ul,ol,h1,h2,h3,h4,h5,form,dl,dt,dd{ margin:0; padding:0;}
+p
+{
+    text-align:left;
+}
+ul,ol,h1,h2,h3,h4,h5,form,dl,dt,dd{ margin:0; padding:0;}
 a,area{behavior:url(js/blur.htc)}
-ul,ol{ list-style:none}
+ul,ol{ list-style:none}s
 .clear0{ height:0; font-size:0; clear:both; overflow:hidden}
 .yellow{ color:#ed6d00}
 .lightGray{ color:#BEBEBE}
