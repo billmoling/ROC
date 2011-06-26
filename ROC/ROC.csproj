@@ -34,14 +34,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.WebPages" />
-    <Reference Include="System.Web.Helpers" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -51,6 +69,16 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -346,16 +374,6 @@
     <Content Include="Content\images\sitemap03.jpg" />
     <Content Include="Content\images\sl.gif" />
     <Content Include="Content\images\sr.gif" />
-    <Content Include="Content\IndexPic\01.jpg" />
-    <Content Include="Content\IndexPic\02.jpg" />
-    <Content Include="Content\IndexPic\03.jpg" />
-    <Content Include="Content\IndexPic\04.jpg" />
-    <Content Include="Content\IndexPic\05.jpg" />
-    <Content Include="Content\IndexPic\06.jpg" />
-    <Content Include="Content\IndexPic\07.jpg" />
-    <Content Include="Content\IndexPic\08.jpg" />
-    <Content Include="Content\IndexPic\09.jpg" />
-    <Content Include="Content\IndexPic\css\smallslider.css" />
     <Content Include="Content\jquery.lightbox-0.5.css" />
     <Content Include="Content\photoscroll.css" />
     <Content Include="Global.asax" />
@@ -364,6 +382,63 @@
     <Content Include="Scripts\jquery.lightbox-0.5.js" />
     <Content Include="Scripts\jquery.smallslider.js" />
     <Content Include="Scripts\photoscroll.js" />
+    <Content Include="Scripts\PhotoShow\ad_next.png" />
+    <Content Include="Scripts\PhotoShow\ad_prev.png" />
+    <Content Include="Scripts\PhotoShow\ad_scroll_back.png" />
+    <Content Include="Scripts\PhotoShow\ad_scroll_forward.png" />
+    <Content Include="Scripts\PhotoShow\example.html" />
+    <Content Include="Scripts\PhotoShow\images\1.jpg" />
+    <Content Include="Scripts\PhotoShow\images\10.jpg" />
+    <Content Include="Scripts\PhotoShow\images\11.jpg" />
+    <Content Include="Scripts\PhotoShow\images\12.jpg" />
+    <Content Include="Scripts\PhotoShow\images\13.jpg" />
+    <Content Include="Scripts\PhotoShow\images\14.jpg" />
+    <Content Include="Scripts\PhotoShow\images\2.jpg" />
+    <Content Include="Scripts\PhotoShow\images\3.jpg" />
+    <Content Include="Scripts\PhotoShow\images\4.jpg" />
+    <Content Include="Scripts\PhotoShow\images\5.jpg" />
+    <Content Include="Scripts\PhotoShow\images\6.jpg" />
+    <Content Include="Scripts\PhotoShow\images\7.jpg" />
+    <Content Include="Scripts\PhotoShow\images\8.jpg" />
+    <Content Include="Scripts\PhotoShow\images\9.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t1.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t10.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t11.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t12.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t13.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t14.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t2.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t3.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t4.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t5.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t6.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t7.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t8.jpg" />
+    <Content Include="Scripts\PhotoShow\images\thumbs\t9.jpg" />
+    <Content Include="Scripts\PhotoShow\jquery.ad-gallery.css" />
+    <Content Include="Scripts\PhotoShow\jquery.ad-gallery.js" />
+    <Content Include="Scripts\PhotoShow\jquery.ad-gallery.pack.js" />
+    <Content Include="Scripts\PhotoShow\loader.gif" />
+    <Content Include="Scripts\PhotoShow\opa75.png" />
+    <Content Include="Scripts\VideoTool\background.png" />
+    <Content Include="Scripts\VideoTool\bigplay.png" />
+    <Content Include="Scripts\VideoTool\controls-ted.png" />
+    <Content Include="Scripts\VideoTool\controls-wmp-bg.png" />
+    <Content Include="Scripts\VideoTool\controls-wmp.png" />
+    <Content Include="Scripts\VideoTool\controls.png" />
+    <Content Include="Scripts\VideoTool\flashmediaelement.swf" />
+    <Content Include="Scripts\VideoTool\jquery.js" />
+    <Content Include="Scripts\VideoTool\loading.gif" />
+    <Content Include="Scripts\VideoTool\mediaelement-and-player.js" />
+    <Content Include="Scripts\VideoTool\mediaelement-and-player.min.js" />
+    <Content Include="Scripts\VideoTool\mediaelement.js" />
+    <Content Include="Scripts\VideoTool\mediaelement.min.js" />
+    <Content Include="Scripts\VideoTool\mediaelementplayer.css" />
+    <Content Include="Scripts\VideoTool\mediaelementplayer.js" />
+    <Content Include="Scripts\VideoTool\mediaelementplayer.min.css" />
+    <Content Include="Scripts\VideoTool\mediaelementplayer.min.js" />
+    <Content Include="Scripts\VideoTool\mejs-skins.css" />
+    <Content Include="Scripts\VideoTool\silverlightmediaelement.xap" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -372,20 +447,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Content\Site.css" />
-    <Content Include="Content\themes\base\jquery-ui.css" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Scripts\jquery-1.4.4.js" />
     <Content Include="Scripts\jquery-1.4.4.min.js" />
     <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
@@ -414,11 +475,14 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\book\" />
+    <Folder Include="Content\Video\" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\ROCDB.edmx">
@@ -449,6 +513,8 @@
     <Content Include="Views\Home\Copyright.cshtml" />
     <Content Include="Views\Shared\NewsLayout.cshtml" />
     <Content Include="Views\Home\teamstory.cshtml" />
+    <Content Include="Views\Home\Video.cshtml" />
+    <Content Include="Views\Home\photoshow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

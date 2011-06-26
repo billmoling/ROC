@@ -1,9 +1,57 @@
-﻿ @{
-     Layout = "~/Views/Shared/_Layout.cshtml";
+﻿ <!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+   
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+     <script type="text/javascript">
+         function showNavDiv(i) { document.getElementById('showNavDiv_0' + i).style.visibility = 'visible'; }
+         function hiddenNavDiv(j) { document.getElementById('showNavDiv_0' + j).style.visibility = 'hidden'; }
+    </script>
+   
+    @RenderSection("HeadStaff", false)
+</head>
 
- }
+<body>
+  <div class="top">
+            <a href="/Home/Index" class="logoLink" target="mainFrame">
+                <img src="@Url.Content("~/Content/images/head.jpg")" alt="logo" /></a>
+            @*<p>
+                <a href="/Home/Index">English</a> <a href="/Home/Index">中文</a>
+            </p>*@
+        </div>
+        <div class="navBg">
+            <a href="#" onmousemove="showNavDiv(1)" onmouseout="hiddenNavDiv(1)" style="width: 130px;">
+               新闻中心  |
+            </a><a href="#" onmousemove="showNavDiv(2)" onmouseout="hiddenNavDiv(2)" style="width: 99px;">
+              岁月专题  |  
+            </a><a href="#" onmousemove="showNavDiv(3)" onmouseout="hiddenNavDiv(3)" style="width: 98px;">
+               认识我们 |  
+            </a>
 
+            </a><a href="#" onmousemove="showNavDiv(3)" onmouseout="hiddenNavDiv(3)" style="width: 98px;">
+              岁月专题 
+            </a>
+        </div>
+        <div class="navContent">
+            <div class="navDivLink" id="showNavDiv_01" style="left: 250px;" onmousemove="showNavDiv(1)"
+                onmouseout="hiddenNavDiv(1)">
+              
+                <a href="">团队活动</a>  <a href="">活动回顾</a> 
+            </div>
+            <div class="navDivLink" id="showNavDiv_02" style="left: 350px;" onmousemove="showNavDiv(2)" onmouseout="hiddenNavDiv(2)">
+              
+                <a href="">人民的胜利</a> <a href="">民国史志</a>
+            </div>
+            <div class="navDivLink" id="showNavDiv_03" style="left: 250px;" onmousemove="showNavDiv(3)"
+                onmouseout="hiddenNavDiv(3)">
+               
+                <a href="/Home/About">关于网站</a> <a href="/Home/teamstory">团队大事记</a> <a href="">宣传册</a> <a href="">鸣谢</a><a href="/Home/Copyright">版权说明</a> 
+            </div>
+         
 
+        </div>
  
  <div class="centerBox">
         <div class="centerSize">
@@ -14,7 +62,7 @@
                     <ul class="newNav">
                         <li><a id="" href="#">活动大记事</a></li>
                         <li><a id="teamstory" href="/Home/teamstory">团队大记事</a></li>
-                        <li><a href="cn_about_04.asp">宣传片</a></li>
+                        <li><a id="video" href="/Home/Video">宣传片</a></li>
                         <li><a id="about" href="/Home/About">关于网站</a></li>
                         <li><a href="cn_about_05.asp">网站地图</a></li>
                         <li><a href="cn_about_06.asp">联系我们</a></li>
@@ -33,9 +81,23 @@
           </div>
 
 
-          <script type="text/javascript">
-              $(document).ready(function () {
-                  var pagename = $("#pagename")[0].value;
-                  $("#" + pagename).addClass("newHov");
-              });
+  
+ <footer id="homefooter">
+            <div class="sosumi">
+                <p class="copyright">
+                    Copyright © china1912-1949.com All Rights Reserve 版权所有 如鸿岁月网保留所有权利
+                   </p>
+                
+            </div>
+            <!--/sosumi-->
+        </footer>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var pagename = $("#pagename")[0].value;
+        $("#" + pagename).addClass("newHov");
+    });
  </script>
+
+</body>
+        
+</html>

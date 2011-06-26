@@ -52,6 +52,14 @@ namespace ROC.Controllers
         {
             return View();
         }
+        public ActionResult Video()
+        {
+            return View();
+        }
+        public ActionResult photoshow()
+        {
+            return View();
+        }
 
         public ActionResult historypeople()
         {
